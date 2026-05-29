@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body {
+            background: rgb(54, 54, 109);
+            color: white;
+            font: normal 1.2em Arial;
+        }
+    </style>
+</head>
+<body>
+    <!-- DOM - > Document 
+     Object Model - Modelo de Objetos para Docuemntos:
+     O DOM (que significa Document Object Model, ou Modelo de Objeto de Documento) é, sem exagero, o conceito mais importante para entender como o front-end funciona. Ele é a ponte mágica que conecta o seu código HTML estático ao seu código JavaScript dinâmico.
+     Para entender o DOM de forma simples, vamos separar o que ele é e o que ele não é.
+
+A Metáfora da Planta da Casa
+Imagine que você está construindo uma casa.
+
+O seu arquivo HTML é a planta baixa, o projeto desenhado no papel. Ele diz onde ficam as portas, janelas e paredes.
+
+Quando você abre esse arquivo no navegador (Chrome, Edge, etc.), o navegador lê a planta e constrói a casa de verdade na memória dele.
+
+Essa "casa de verdade" que o navegador construiu e colocou na tela é o DOM.
+
+Por que o DOM existe?
+O JavaScript é uma linguagem de programação cega para textos de marcação. Ele não entende o que é um texto escrito <p>Olá</p>. O JavaScript só entende Objetos.
+
+Então, o navegador faz um favor gigante para nós: ele pega todo o seu código HTML e transforma cada tag em um objeto organizadinho em um formato de "árvore" (com elementos pais e elementos filhos).
+
+HTML: É o texto que você escreve no seu editor de código.
+
+DOM: É a representação viva desse HTML que o navegador cria na memória.
+
+JavaScript: É a ferramenta que você usa para acessar e modificar o DOM em tempo real.
+-->
+    <h1>Iniciando estudos com DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+    <div id="msg">Clique em mim</div>
+    <script>
+        let corpo = window.document.body;
+        let p1 = window.document.getElementsByTagName('p')[0];
+        corpo.style.background = 'gray';
+        p1.style.color = 'yellow';
+        window.document.write(p1.innerText); /* innerText pega somento o texto, se for pegar com as tag também tem que usar innerHTML */
+        //let d = window.document.getElementById('msg');
+        //d.style.background = 'green';
+        //d.innerText = 'Estou aguardando...';
+        window.document.getElementById('msg').innerText = 'Estou aguardando...';
+        window.document.querySelector('div#msg').style.background = 'blue'
+    </script>
+</body>
+</html>
