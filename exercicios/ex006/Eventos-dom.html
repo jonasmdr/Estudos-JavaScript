@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#area {
+            font: normal 1.2em Arial;
+            background: rgb(46, 146, 46);
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Evento é tudo que pode acontecer com essa div ou com qualquer outra tag, mais comum evento de pausa ao passar por ela, vai disparar o evento mouseenter, se mover dentro dentra vai acionar o mousemove, segura o botao do mouse mousedown, soltar mouseup, ao clicar o evento click, e quando sair da div, mouseout, existem outros, esse exemplo é apenas do mouse -->
+    <div id="area"> <!-- o onclick vai chamar o nome da ação que eu quero botar, nesse exemplo é CLICAR, quando clicar na div ele vai disparar o CLICAr -->
+        Interaja...
+    </div>
+    <!-- 
+    Função - é um cojunto de códigos/conjunto de linhas que só vão ser executadas quando o evento acontencer. ex.: vou fazer 10 linhas, essas linhas são chamadas de bloco, elas não vão ser executadas automaticamente, só vão acontecer quando eu clicar dentro da div (no caso do exemplo), para executar apenas quando um evento ocorrer, temos que coloca primeiro dentro de um {bloco} que é delimitado pelo sinal de chaves, coloca o codigo dentro, e esse bloco tem que ser nomeado com uma funtion, e geralmente o nome das ações, são ações que a gente pode fazer. ex.: funtion ação(e opcionalmente pode colocar algum paramêtro aqui entre parenteses){  }
+    -->
+    <script>
+        let area = window.document.getElementById('area');
+        area.addEventListener('click', clicar);
+        area.addEventListener('mouseenter', entrar);
+        area.addEventListener('mouseout', sair);
+
+        function clicar() {
+            area.style.background = 'yellow';
+            area.innerText = 'Clicou!';
+        };
+        function entrar() {
+            area.style.color = 'black';
+            area.innerText = 'entrar';
+        };
+        function sair() {
+            area.innerText = 'Saiu!';
+            area.style.background = 'green';
+        };
+    </script>
+</body>
+</html>
