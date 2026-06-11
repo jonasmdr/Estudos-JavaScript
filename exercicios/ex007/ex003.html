@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio</title>
+    <style>
+        body {
+            font: normal 1.2em Arial;
+        }
+
+        input.n1n2 {
+            width: 60px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Praticas</h1>
+    <input class="n1n2" type="number" name="n1" id="n1">
+    <input class="n1n2" type="number" name="n2" id="n2">
+    <input type="button" value="Calcular" onclick="clicar()">
+    <div id="calculo">
+
+    </div>
+
+    <script>
+        let num1 = window.document.querySelector('input#n1');
+        let num2 = window.document.querySelector('input#n2');
+        let calculo = window.document.querySelector('div#calculo');
+        function clicar() {
+            let n1 = Number(num1.value);
+            let n2 = Number(num2.value);
+            let res = n1 + n2;
+            calculo.innerHTML = `A soma dos valores ${n1} e ${n2} é = ${res}`
+            window.alert(`A soma dos valores ${n1} e ${n2} é = ${res}`)
+        }
+    </script>
+</body>
+</html>
