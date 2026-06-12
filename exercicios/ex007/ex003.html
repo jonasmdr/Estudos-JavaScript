@@ -6,21 +6,33 @@
     <title>exercicio</title>
     <style>
         body {
-            font: normal 1.2em Arial;
+            font: normal 1.1em Arial;
         }
 
         input.n1n2 {
             width: 60px;
         }
+
+        button {
+            padding: 8px;
+            margin-left: 90%;
+        }
     </style>
 </head>
-<body>
+<body id="body">
+    <button onclick="cliquei()">Alterar tema</button>
     <h1>Praticas</h1>
     <input class="n1n2" type="number" name="n1" id="n1">
     <input class="n1n2" type="number" name="n2" id="n2">
     <input type="button" value="Calcular" onclick="clicar()">
     <div id="calculo">
-
+        O resultado aqui!
+    </div>
+    <h1>Identificador de altura</h1>
+    <input class="n1n2" type="number" name="alt" id="alt">
+    <input type="button" value="Verificar" onclick="apertar()">
+    <div id="media">
+        Sua altura é: 
     </div>
 
     <script>
@@ -32,7 +44,29 @@
             let n2 = Number(num2.value);
             let res = n1 + n2;
             calculo.innerHTML = `A soma dos valores ${n1} e ${n2} é = ${res}`
-            window.alert(`A soma dos valores ${n1} e ${n2} é = ${res}`)
+            //window.alert(`A soma dos valores ${n1} e ${n2} é = ${res}`)
+        }
+
+        let alt = window.document.querySelector('input#alt');
+        let media = window.document.querySelector('div#media');
+        function apertar() {
+            let alt1 = Number(alt.value);
+            media.innerHTML += `${alt1} `;
+            if (alt1 <= 170) {
+                media.innerHTML += `Você está abaixo da média`
+            } else {
+                if (alt1 == 171) {
+                    media.innerHTML += `Você tem altura média`
+                } else {
+                    if (alt1 >= 172) {
+                        media.innerHTML += `Você está acima da média`
+                    } 
+                }
+            }
+        }
+        let body = window.document.querySelector('body#body')
+        function cliquei() {
+            body.style.background = 'gray'
         }
     </script>
 </body>
