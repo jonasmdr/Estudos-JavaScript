@@ -32,8 +32,16 @@
     <input class="n1n2" type="number" name="alt" id="alt">
     <input type="button" value="Verificar" onclick="apertar()">
     <div id="media">
-        Sua altura é: 
+         
     </div>
+
+    <h1>Consulta de multa</h1>
+    <input class="n1n2" type="number" name="tvel" id="tvel">
+    <input id="botaomulta" type="button" value="Verificar">
+    <div id="multa">
+        
+    </div>
+    <p>Dirija com segurança!!</p>
 
     <script>
         let num1 = window.document.querySelector('input#n1');
@@ -53,13 +61,13 @@
             let alt1 = Number(alt.value);
             media.innerHTML += `${alt1} `;
             if (alt1 <= 170) {
-                media.innerHTML += `Você está abaixo da média`
+                media.innerHTML = `Sua altura é: ${alt1}. Você está abaixo da média`
             } else {
                 if (alt1 == 171) {
-                    media.innerHTML += `Você tem altura média`
+                    media.innerHTML = `Sua altura é: ${alt1}. Você tem altura média`
                 } else {
                     if (alt1 >= 172) {
-                        media.innerHTML += `Você está acima da média`
+                        media.innerHTML = `Sua altura é: ${alt1}. Você está acima da média`
                     } 
                 }
             }
@@ -67,6 +75,20 @@
         let body = window.document.querySelector('body#body')
         function cliquei() {
             body.style.background = 'gray'
+            body.style.color = 'white'
+        }
+
+        let vel = window.document.querySelector('input#tvel')
+        let botaomulta = window.document.querySelector('input#botaomulta')
+        let multa = window.document.querySelector('div#multa')
+        botaomulta.addEventListener('click', verificar)
+        function verificar() {
+            let vel1 = Number(vel.value)
+            if (vel1 > 60) {
+                multa.innerHTML = 'Você passou o limite de velocidade. MULTADO!'
+            } else {
+                multa.innerHTML = ''
+            }
         }
     </script>
 </body>
