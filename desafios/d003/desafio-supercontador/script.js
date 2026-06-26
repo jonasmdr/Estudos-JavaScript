@@ -9,7 +9,7 @@ function contar() {
     let res = window.document.querySelector('div#res')
     let num = document.createElement('p')
     res.innerHTML = `Contando:`
-    if (ini == '' || fi == '' || pas == '') {
+    if (!ini || !fi || !pas) {
         res.innerHTML = 'Impossível contar!'
     } else if (pas <= 0) {
             window.alert('Passo inválido! Considerando PASSO')
